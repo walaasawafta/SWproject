@@ -1,13 +1,14 @@
 
 
-import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+//import static org.junit.Assert.*;
 public class test {
 	private calculator calc;
 	@Before
-	 public void setUp() throws Exception {
+	 public void setUp() 
+			 throws Exception {
 	  calc = new calculator();
 	 }
 	
@@ -15,7 +16,7 @@ public class test {
 	 public void tearDown() throws Exception {
 	  calc = null;
 	 }
-	 
+	
 	 @Test
 	  public void testAdd_positiveNumbers_shouldReturnResult() {
 		calc.add(3, 4);
@@ -50,12 +51,18 @@ public class test {
 	  
 	   
 	 }
-	  
+	
+	 
 	 @Test(expected = ArithmeticException.class)
-	 public void testDivideByZero() {
-	  calc.div(100.5, 0);
+	 public void testDivideByZero(){
+	  //calc.div(100.5, 0);
+	 
+	      calc.div(100.5, 0);
+	     throw new ArithmeticException ("Should have thrown an exception!");
+	    
 	  
-	 }
+	  }
+	 
 	
 	
 	
@@ -66,5 +73,7 @@ public class test {
 	
 
 }
+
+
 
 
